@@ -1,10 +1,29 @@
-#! /bin/tcsh
+#Skripti eesmärgiks on leida murdekorpuse materjalist abessiivi esinemisjuhud, kus abessiiv esineks üksinda, ilma kaassõnata 'ilma', ehk
+#eesmärgiks on leida üksused, kus millegi puudumist on väljendatud sünteetiliselt.
+#Väljundiks on semikoolonitega eraldatud list, mida saab hiljem Excelis tabeliks teha ja käsitsi üle kontrollida. 
+#Skripti väljundis on seega igal eraldi real järgmine info:
+#Murdeala, kontekst (2 sõna), morfoloogiline info, abessiivi käändes sõna, kontekst (1 sõna).
+#########Igas reas ei leidu siiski konteksti juures kahte sõna, sest mõned abessiivid esinevad lause lõpus või alguses.
+#Näide väljundist:
+#IDA;jääb poolel'i;sup.ab.;`võtmada;vaja
+#Sisendiks on .xml laiendiga murdekorpuse morfoloogiliselt märgndatud failid.
+#Sisendfailid peavad olema murrete kaupa eraldi kaustades; skript käivitatakse igas kaustas eraldi.
 
+#! /bin/tcsh
+#Skript loeb kõiki kaustas olevaid .xml laiendiga faile
 cat *.xml \
+#Laused peavad olema eraldi real: Eesmärk on eemaldada ilma+abessiiv juhud ja selle kaassõnafraasi osad ei esine kunagi eraldi lausetes.
 | sed 's/\(<lause\)/\n\1/g' \
-| sed 's/\(<sone[^>]*>[^<]*<\/sone><sone[^>]*>[^<]*<\/sone><sone id="[^"]*" [^=]*=\?"\?[^"]*"\? \?lemma="[^"]*" [^=]*=\?"\?[^"]*"\? \?vorm="[^\.]*\.ab."\)/#\1/g' | tr '#' '\n' \
+#Järgmisega piiratakse adessiivi ümber kontekst: kahe sõna kaugusele enne adessiivi tuleb märgend #
+| sed 's/\(<sone[^>]*>[^<]*<\/sone><sone[^>]*>[^<]*<\/sone><sone id="[^"]*" [^=]*=\?"\?[^"]*"\? \?lemma="[^"]*" [^=]*=\?"\?[^"]*"\? \?vorm="[^\.]*\.ab."\)/#\1/g' \
+# Märgend # asendatakse reavahetusega, et väljundis oleks a) read, kus ei ole abessiivi b) read kus on abessiiv, abessiivi ees olev kontekst
+#ja kõik, mis järgneb abessiivile
+| tr '#' '\n' \
+#Jäetakse alles ainult üks üksus pärast abessiivi
 | sed 's/\(\.ab\."[^=]*=\?"\?[^"]*"\? \?>[^<]*<\/sone><sone[^>]*>[^<]*<\/sone>\).*$/\1/g' \
+#Jäetakse alles ainult read, kus esineb abessiiv
 | grep '\.ab\.' \
+
 | sed 's/\(\.ab\."[^=]*=\?"\?[^"]*"\? \?>[^<]*\)/\1#/g' \
 | sed 's/vorm="\([^\.]*\.ab\.\)"/>\.\1<\/sone/g' \
 | sed 's/\(<\/sone\)/@\1/g' \
@@ -12,9 +31,9 @@ cat *.xml \
 | sed 's/<[^>]*>//g' \
 | tr '@' ' ' | sed 's/ \.\([^\.]*\.ab\.\) /;\1;/' \
 | sed 's/# /;/' \
-| sed 's/^/KESK;/' > abessiiv.txt
- 
- 
- 
-edaspidi sed 's/^/KESK;/'>> proov.csv
-/home/pohl01/m/mruutma1/murded/abessiiv.txt
+# Iga rea ette lisatakse murdeala, mille faile parasjagu on vaadatud. Seejärel moodustatakse väljundfail.
+#Kuna väljundfaili lisatakse ka teiste murdealade tulemused, peab kirjutama täpse teekonna, kuhu väljundfail salvestatakse.
+| sed 's/^/KESK;/' > /home/pohl01/m/mruutma1/murded/abessiiv.txt
+#Teiste murrete abessiivi esinemiste saamiseks peab skripti käivitama mõne murde kaustas.
+#Tulemuse saab salvestada alati samasse faili, skripti viimaseks reaks on siis aga edaspidi:
+#sed 's/^/KESK;/'>> proov.csv
