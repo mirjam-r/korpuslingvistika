@@ -1,0 +1,1 @@
+cat abessiiv.txt | sed 's/\([^;]*\);.*$/\1/' | sort | uniq -c | sort -nr > abessiiv_sagedused.txt
