@@ -1,2 +1,2 @@
-# korpuslingvistika
+# Ilmaütlev kääne murretes
 Miniuurimus
