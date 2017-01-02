@@ -23,17 +23,28 @@ cat *.xml \
 | sed 's/\(\.ab\."[^=]*=\?"\?[^"]*"\? \?>[^<]*<\/sone><sone[^>]*>[^<]*<\/sone>\).*$/\1/g' \
 #Jäetakse alles ainult read, kus esineb abessiiv
 | grep '\.ab\.' \
-
+#Siin lisataks abessiivis sõna taha #, sest seda üksust soovitakse hiljem eraldada semikooloniga. Hiljem semikoolonit pole sinna
+#võimalik lisada, sest ainus, mis eraldab hiljem seda üksust teistest, on tühik. Tühikut aga ei saa muuta semikooloniks, sest
+#kahe kontekstiüksuse vahel on samuti tühik, mis peaksid väljundisse alles jääma. Seega asendatakse # hiljem ;
 | sed 's/\(\.ab\."[^=]*=\?"\?[^"]*"\? \?>[^<]*\)/\1#/g' \
+#Kuna lõplikus väljundis peaks alles jääma abessiivis sõna morfoloogiline info, aga muude üksuse infot pole uurimise mõttes oluline,
+#märgitakse abessiivi mof.info juurde märgendid > ja </sone. Nende märgendite vahel on alati märgendatud sõna ja seega kui märkida
+#morfoloogiline info nende tähistega, saab hiljem kõik muud märgendid ära kustutada ja alles jääb nii morfoloogiline info kui ka
+#märgendatud sõnad.
 | sed 's/vorm="\([^\.]*\.ab\.\)"/>\.\1<\/sone/g' \
+#Iga eraldi üksuse vahele tuleb @, mis hiljem muudetakse sõnadevaheliseks tühikuks.
 | sed 's/\(<\/sone\)/@\1/g' \
+#Eemaldatakse read, kus esineb 'ilma' ehk alles jäävad vaid sünteetilised juhud.
 | grep -v 'ilma' \
+#kustutakse ülearused morfoloogilised märgendid
 | sed 's/<[^>]*>//g' \
-| tr '@' ' ' | sed 's/ \.\([^\.]*\.ab\.\) /;\1;/' \
+| tr '@' ' ' \
+#morfoloogiline info eraldatakse semikooloniga
+| sed 's/ \.\([^\.]*\.ab\.\) /;\1;/' \
 | sed 's/# /;/' \
 # Iga rea ette lisatakse murdeala, mille faile parasjagu on vaadatud. Seejärel moodustatakse väljundfail.
-#Kuna väljundfaili lisatakse ka teiste murdealade tulemused, peab kirjutama täpse teekonna, kuhu väljundfail salvestatakse.
+#######Kuna väljundfaili lisatakse ka teiste murdealade tulemused, peab kirjutama täpse teekonna, kuhu väljundfail salvestatakse.
 | sed 's/^/KESK;/' > /home/pohl01/m/mruutma1/murded/abessiiv.txt
-#Teiste murrete abessiivi esinemiste saamiseks peab skripti käivitama mõne murde kaustas.
+#Teiste murrete abessiivi esinemiste saamiseks peab skripti käivitama mõne murde kaustas, nt idamurde.
 #Tulemuse saab salvestada alati samasse faili, skripti viimaseks reaks on siis aga edaspidi:
-#sed 's/^/KESK;/'>> proov.csv
+#sed 's/^/IDA;/' >> /home/pohl01/m/mruutma1/murded/abessiiv.txt
