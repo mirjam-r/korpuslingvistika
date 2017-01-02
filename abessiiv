@@ -3,7 +3,7 @@
 #Väljundiks on semikoolonitega eraldatud list, mida saab hiljem Excelis tabeliks teha ja käsitsi üle kontrollida. 
 #Skripti väljundis on seega igal eraldi real järgmine info:
 #Murdeala, kontekst (2 sõna), morfoloogiline info, abessiivi käändes sõna, kontekst (1 sõna).
-#########Igas reas ei leidu siiski konteksti juures kahte sõna, sest mõned abessiivid esinevad lause lõpus või alguses.
+###Igas reas ei leidu siiski konteksti juures kahte sõna, sest mõned abessiivid esinevad lause lõpus või alguses.
 #Näide väljundist:
 #IDA;jääb poolel'i;sup.ab.;`võtmada;vaja
 #Sisendiks on .xml laiendiga murdekorpuse morfoloogiliselt märgndatud failid.
@@ -43,7 +43,7 @@ cat *.xml \
 | sed 's/ \.\([^\.]*\.ab\.\) /;\1;/' \
 | sed 's/# /;/' \
 # Iga rea ette lisatakse murdeala, mille faile parasjagu on vaadatud. Seejärel moodustatakse väljundfail.
-#######Kuna väljundfaili lisatakse ka teiste murdealade tulemused, peab kirjutama täpse teekonna, kuhu väljundfail salvestatakse.
+###!!!!Kuna väljundfaili lisatakse ka teiste murdealade tulemused, peab kirjutama täpse teekonna, kuhu väljundfail salvestatakse.
 | sed 's/^/KESK;/' > /home/pohl01/m/mruutma1/murded/abessiiv.txt
 #Teiste murrete abessiivi esinemiste saamiseks peab skripti käivitama mõne murde kaustas, nt idamurde.
 #Tulemuse saab salvestada alati samasse faili, skripti viimaseks reaks on siis aga edaspidi:
