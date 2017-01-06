@@ -1,6 +1,8 @@
 # Skripti eesmärgiks on leida murdekorpuse materjalist abessiivi esinemisjuhud, kus abessiiv esineks koos kaassõnaga 'ilma'
 # Ehk eesmärgiks on leida üksused, kus millegi puudumist on väljendatud analüütiliselt.
-# Skript on sama, mis 'adessiiv.sh'.
+# Skript on sama, mis 'adessiiv.sh'
+# KESK;onn ilma;ilma;sg.ab.;korstnatta;
+
 
 #! /bin/tcsh
 cat *.xml \
