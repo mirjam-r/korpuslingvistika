@@ -2,8 +2,13 @@
 Miniuurimus
 
 Ülevaade
+
 Eesmärgid
+
 Materjal
+
 Töökäik
+
 Tulemused
+
 Järeldused
