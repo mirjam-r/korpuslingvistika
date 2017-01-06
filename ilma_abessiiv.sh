@@ -1,3 +1,13 @@
+# Skripti eesmärgiks on leida murdekorpuse materjalist abessiivi esinemisjuhud, kus abessiiv esineks koos kaassõnaga 'ilma'
+# Ehk eesmärgiks on leida üksused, kus millegi puudumist on väljendatud analüütiliselt.
+# Väljundiks on semikoolonitega eraldatud list, mida saab hiljem Excelis tabeliks teha ja käsitsi üle kontrollida. 
+# Näide väljundist:
+# VORU;nii ilm;ilma;sg.ab.;armutta;`pes't'i 
+# Sisendiks on .xml laiendiga murdekorpuse morfoloogiliselt märgndatud failid.
+# Sisendfailid peavad olema murrete kaupa eraldi kaustades
+# !!! Skript käivitatakse igas kaustas eraldi!
+# Esimesena peabki minema kausta, kus murdeala .xml failid on.
+# Skripti täpsemad etappide kommentaarid on failis abessiiv.sh. Kohad, kus miskit on muudetud, on kommenteeritud siia skripti vahele.
 cat *.xml \
 | sed 's/\(<lause\)/\n\1/g' \
 | sed 's/\(<sone[^>]*>[^<]*<\/sone><sone[^>]*>[^<]*<\/sone><sone id="[^"]*" [^=]*=\?"\?[^"]*"\? \?lemma="[^"]*" [^=]*=\?"\?[^"]*"\? \?vorm="[^\.]*\.ab."\)/#\1/g' \
