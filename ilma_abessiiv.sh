@@ -2,7 +2,7 @@
 # Ehk eesmärgiks on leida üksused, kus millegi puudumist on väljendatud analüütiliselt.
 # Skript on sama, mis 'adessiiv.sh'. Ainus erinevus on, et 'ilma' kaassõnaga üksused jäetakse alles ja eemaldatakse juhud,
 #kus ilma kaassõna puudub. (skripti täpsemad kommentaarid on failis adessiiv.sh)
-# Ehk grep -v 'ilma' asemel on grep 'ilma'
+# Ehk grep -v 'ilma' asemel on grep -w 'ilma'
 
 #! /bin/tcsh
 cat *.xml \
@@ -15,7 +15,7 @@ cat *.xml \
 | sed 's/vorm="\([^\.]*\.ab\.\)"/>\.\1<\/sone/g' \
 | sed 's/\(<\/sone\)/@\1/g' \
 # Jäetakse alles ainult need juhud, kus esineb kaassõna ilma
-| grep 'ilma' \
+| grep -w 'ilma' \
 | sed 's/<[^>]*>//g' \
 | tr '@' ' ' \
 | sed 's/ \.\([^\.]*\.ab\.\) /;\1;/' \
