@@ -1,4 +1,4 @@
-#Skripti väljundiks on fail, kus on abessiivi esinemise sagedused murdealati.
+#Skripti väljundiks on fail, kus on abessiivi esinemise sagedused murdealade kaupa.
 cat abessiiv.txt \
 #Kustutab ülearuse info ja jätab alles ainult murdeala
 | sed 's/\([^;]*\);.*$/\1/' \
