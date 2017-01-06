@@ -13,7 +13,7 @@ cat *.xml \
 | grep '\.ab\.' \
 | sed 's/\(\.ab\."[^=]*=\?"\?[^"]*"\? \?>[^<]*\)/\1#/g' \
 | sed 's/vorm="\([^\.]*\.ab\.\)"/>\.\1<\/sone/g' \
-| sed 's/\(liik="Pre">ilma\)/\1;ilma/g' \
+| sed 's/\(liik="Pre">[^<]*\)/\1;ilma/g' \
 | sed 's/\(<\/sone\)/@\1/g' \
 | grep -w 'ilma' \
 | sed 's/<[^>]*>//g' \
