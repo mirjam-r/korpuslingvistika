@@ -1,2 +1,0 @@
-# Ilmaütlev kääne murretes
-Miniuurimus
