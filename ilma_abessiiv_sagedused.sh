@@ -1,7 +1,7 @@
-#Skripti väljundiks on fail, kus on abessiivi esinemise sagedused murdealade kaupa.
-#Sisendiks fail 'abessiiv.txt' (leiad repositooriumist)
-cat abessiiv.txt \
+#Skripti väljundiks on fail, kus on ilma+abessiivi esinemise sagedused murdealade kaupa.
+#Sisendiks fail 'ilma_abessiiv.txt' (leiad repositooriumist)
+cat ilma_abessiiv.txt \
 #Kustutab ülearuse info ja jätab alles ainult murdeala
 | sed 's/\([^;]*\);.*$/\1/' \
 #Sagedusloend tähestikulises järjekorras
-| sort | uniq -c | sort -nr > abessiiv_sagedused.txt
+| sort | uniq -c | sort -nr > ilma_abessiiv_sagedused.txt
