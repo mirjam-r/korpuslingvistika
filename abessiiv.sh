@@ -51,5 +51,5 @@ cat *.xml \
 # !!!!! Teekond muuda enda kausta teekonnaks.
 # > /home/pohl01/m/mruutma1/murded/abessiiv.txt
 #Teiste murrete abessiivi esinemiste saamiseks peab skripti käivitama mõne teise murde kaustas, nt idamurde.
-#Tulemuse saab salvestada alati samasse faili, skripti viimaseks reaks on siis aga edaspidi (muude teekond enda kausta teekonnaks):
+#Tulemuse saab salvestada alati samasse faili, skripti viimaseks reaks on siis aga edaspidi (muuda teekond enda kausta teekonnaks):
 #sed 's/^/IDA;/' >> /home/pohl01/m/mruutma1/murded/abessiiv.txt
