@@ -8,6 +8,8 @@
 # !!! Skript käivitatakse igas kaustas eraldi!
 # Esimesena peabki minema kausta, kus murdeala .xml failid on.
 # Skripti täpsemad etappide kommentaarid on failis abessiiv.sh. Kohad, kus miskit on muudetud, on kommenteeritud siia skripti vahele.
+
+#! /bin/tcsh
 cat *.xml \
 | sed 's/\(<lause\)/\n\1/g' \
 | sed 's/\(<sone[^>]*>[^<]*<\/sone><sone[^>]*>[^<]*<\/sone><sone id="[^"]*" [^=]*=\?"\?[^"]*"\? \?lemma="[^"]*" [^=]*=\?"\?[^"]*"\? \?vorm="[^\.]*\.ab."\)/#\1/g' \
@@ -22,4 +24,4 @@ cat *.xml \
 | sed 's/ \.\([^\.]*\.ab\.\) /;\1;/' \
 | sed 's/# /;/' \
 | sed 's/^/KIRDE;/' 
-> /home/pohl01/m/mruutma1/murded/ilma_abessiiv.txt
+# > /home/pohl01/m/mruutma1/murded/ilma_abessiiv.txt
