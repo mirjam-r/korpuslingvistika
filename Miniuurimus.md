@@ -17,17 +17,17 @@ Et võrrelda, mis murdealadel on tavalisem analüütiline ja mis aladel sünteet
 
 Sõnade arv murretes on leitud skrptiga sonade_arv.sh.
 
-			abessiiv    ilma+abessiiv
-	SAARTE	     	192	       53
-	LÄÄNE	      	148	       209
-	VÕRU	        280	       243
-	KESK	        141	       165
-	IDA	        286	       143
-	KIRDE	        260	       174
-	RANNA	        235	       157
-	MULGI	        164	       189
-	TARTU	        137	       124
-	SETU	        85	       43
+		abessiiv    ilma+abessiiv
+	SAARTE	192	53
+	LÄÄNE	148	209
+	VÕRU	280	243
+	KESK	141	165
+	IDA	286	143
+	KIRDE	260	174
+	RANNA	235	157
+	MULGI	164	189
+	TARTU	137	124
+	SETU	85	43
 
 Tabel 1. Normaliseeritud sagedustabel.
 
