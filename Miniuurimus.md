@@ -14,6 +14,11 @@ Et võrrelda, mis murdealadel on tavalisem analüütiline ja mis aladel sünteet
 
 (üksuse esinemissagedus x sõnade arv korpuses) / sõnade arv murdes. 
 
-Sõnade arv murretes on leitud skrptiga sonade_arv.sh. Normaliseeritud sagedustabelid on failis normaliseeritud_sagedused.xlsx.
+Sõnade arv murretes on leitud skrptiga sonade_arv.sh.
 
 
+Tabel 1. Normaliseeritud sagedustabel.
+
+Normaliseeritud sagedusandmete põhjal selgub (tabel 1), et ida-, kirde-, ranna-, saarte, Võru, Tartu ja Setu murdes on sünteetilist abessiiviga vormi kasutatud rohkem kui analüütilist konstruktsiooni. Kõige selgemalt on sünteetilist vormi eelistatud ida-, kirde- ja rannamurdes. Ka saarte murdes on sünteetilist konstruktsiooni kasutatud palju rohkem kui analüütilist. Tartu, Võru ja Setu murdes pole kahe vormi sagedusandmete kasutuses väga märkimisväärseid erinevuseid. Ka Mulgi murdes on kahe konstruktsiooni esinemissageduste erinevus üsna väike, kuigi analüütilist väljendusviisi esineb selles murdes mõnevõrra rohkem. Keskmurdes ja läänemurdes on samuti analüütiline kaassõnaga vorm sagedasem.
+
+Kokkuvõttes on sagedusandmete põhjal sünteetiline abessiiviga vormi ja analüütilise kaassõnaga konstruktsiooni kasutus üsna ühtlane. Selge eristuva ühtse rühma, kus sünteetiline vorm on eelistatum, moodustavad ida-, kirde- ja rannamurre. 
