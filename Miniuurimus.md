@@ -1,7 +1,9 @@
 # Abessiiv ja kaassõna 'ilma' murretes
 Miniuurimus
 
-Selle töö eesmärk on uurida ühe sünonüümse konstruksioonipaari, kus sama on väljendatud analüütiliselt kaassõna abil või ainult käändelõpuga, levikut eesti murretes. Vaatluse all on esinemissagedused eri murretes - kus millist vormi rohkem esineb. Uuritavateks samatähenduslikest konstruktsioonideks on selles töös a) kaassõnafraas, mis koosneb kaassõnast ilma ja seda laiendavast ilmaütlevas käändes sõnavormist, ning b) ilmaütlevas käändes sõnavormid. Mõlemad konstruktsioonid väljendavad millegi puudumist. Seejuures võivad sünonüümsed paarid olla moodustatud mõnest substantiivist: ilma aknata vs aknata või supiinitarindist: ilma õppimata vs õppimata. 
+Selle töö eesmärk on uurida ühe sünonüümse konstruksioonipaari, kus sama on väljendatud analüütiliselt kaassõna abil või ainult käändelõpuga, levikut eesti murretes. Vaatluse all on esinemissagedused eri murretes - kus millist vormi rohkem esineb. Uuritavateks samatähenduslikest konstruktsioonideks on selles töös 
+a) kaassõnafraas, mis koosneb kaassõnast ilma ja seda laiendavast ilmaütlevas käändes sõnavormist ning 
+b) ilmaütlevas käändes sõnavormid. Mõlemad konstruktsioonid väljendavad millegi puudumist. Seejuures võivad sünonüümsed paarid olla moodustatud mõnest substantiivist: ilma aknata vs aknata või supiinitarindist: ilma õppimata vs õppimata. 
 
 Uurimismaterjaliks on eesti murrete korpuse morfoloogiliselt märgendatud tekstid. Tekstidest on välja otsitud kõik üksused, kus abessiiv esineb üksinda või kus abessiiv esineb koos kaassõnaga 'ilma'. Selles töös arvestan kõikide murdekorpuses abessiiviks märgendatud sõnedega, aga olen materjali kaasanud ka ümbritseva konteksti, et hiljem saaks kõik juhud käsitsi üle kontrollida. 
 
