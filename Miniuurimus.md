@@ -1,4 +1,4 @@
-Abessiiv ja kaassõna 'ilma' murretes
+# Abessiiv ja kaassõna 'ilma' murretes
 Miniuurimus
 
 Selle töö eesmärk on uurida ühe sünonüümse konstruksioonipaari, kus sama on väljendatud analüütiliselt kaassõna abil või sünteetiliselt ainult käändelõpuga, levikut eesti murretes. Vaadeldud on mõlema konstruktsiooni esinemissagedusi eri murretes. Töö põhiküsimuseks on, millist vormi erinevatel murdealadel rohkem esineb - kas tavalisem on sünteetiline või analüütiline väljendusviis. Esinemissagedused on normaliseeritud, et eri murdealade sagedused oleksid võrreldatavad. Kõrge sagedus võib viidata ühe konstruktsiooni eelistamist teisele. 
