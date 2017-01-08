@@ -29,7 +29,7 @@ MULGI	164	189
 TARTU	137	124
 SETU	85	43
 
-Tabel 1. Normaliseeritud sagedustabel.
+Tabel 1. Normaliseeritud sagedustabel
 
 Normaliseeritud sagedusandmete põhjal selgub (tabel 1), et ida-, kirde-, ranna-, saarte, Võru, Tartu ja Setu murdes on sünteetilist abessiiviga vormi kasutatud rohkem kui analüütilist konstruktsiooni. Kõige selgemalt on sünteetilist vormi eelistatud ida-, kirde- ja rannamurdes. Ka saarte murdes on sünteetilist konstruktsiooni kasutatud palju rohkem kui analüütilist. Tartu, Võru ja Setu murdes pole kahe vormi sagedusandmete kasutuses väga märkimisväärseid erinevuseid. Ka Mulgi murdes on kahe konstruktsiooni esinemissageduste erinevus üsna väike, kuigi analüütilist väljendusviisi esineb selles murdes mõnevõrra rohkem. Keskmurdes ja läänemurdes on samuti analüütiline kaassõnaga vorm sagedasem.
 
