@@ -1,5 +1,5 @@
 #Skript loeb kokku, mitu sõna on morfoloogiliselt märgendatud murdetekstis
-#Sisendiks kaustas olevad .xml laiendiga failid
+#Sisendiks kõik kaustas olevad .xml laiendiga failid
 
 #! /bin/tcsh
 cat *.xml \
