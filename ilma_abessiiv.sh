@@ -7,21 +7,25 @@
 # Sisendfailid peavad olema murrete kaupa eraldi kaustades
 # !!! Skript käivitatakse igas kaustas eraldi!
 # Esimesena peabki minema kausta, kus murdeala .xml failid on.
-# Skripti täpsemad etappide kommentaarid on failis abessiiv.sh. Kohad, kus miskit on muudetud, on kommenteeritud siia skripti vahele.
+# Skripti täpsemad etappide kommentaarid on failis abessiiv.sh. Kohad, kus miskit on muudetud, on kommenteeritud selle skripti vahele.
 
 #! /bin/tcsh
 cat *.xml \
 | sed 's/\(<lause\)/\n\1/g' \
 | sed 's/\(<sone[^>]*>[^<]*<\/sone><sone[^>]*>[^<]*<\/sone><sone id="[^"]*" [^=]*=\?"\?[^"]*"\? \?lemma="[^"]*" [^=]*=\?"\?[^"]*"\? \?vorm="[^\.]*\.ab."\)/#\1/g' \
-| tr '#' '\n' | sed 's/\(\.ab\."[^=]*=\?"\?[^"]*"\? \?>[^<]*<\/sone><sone[^>]*>[^<]*<\/sone>\).*$/\1/g' | grep '\.ab\.' \
+| tr '#' '\n' \
+| sed 's/\(\.ab\."[^=]*=\?"\?[^"]*"\? \?>[^<]*<\/sone><sone[^>]*>[^<]*<\/sone>\).*$/\1/g' \
+| grep '\.ab\.' \
 | sed 's/\(\.ab\."[^=]*=\?"\?[^"]*"\? \?>[^<]*\)/\1#/g' \
 | sed 's/vorm="\([^\.]*\.ab\.\)"/>\.\1<\/sone/g' \
+# Kuna lõplikus andmestikus peaks olema 'ilma'-kaassõna lemma vorm, lisatakse märgendatud 'ilma' lõppu 'ilma' lemma.
 | sed 's/\(liik="Pre">[^<]*\)/\1;ilma/g' \
 | sed 's/\(<\/sone\)/@\1/g' \
+# Jäetakse alles ainult read, kus esineb 'ilma' ehk ära kaovad sünteetilised variandid
 | grep -w 'ilma' \
 | sed 's/<[^>]*>//g' \
 | tr '@' ' ' \
 | sed 's/ \.\([^\.]*\.ab\.\) /;\1;/' \
 | sed 's/# /;/' \
-| sed 's/^/KIRDE;/' 
+| sed 's/^/KESK;/' 
 # > /home/pohl01/m/mruutma1/murded/ilma_abessiiv.txt
